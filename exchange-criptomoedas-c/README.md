@@ -7,13 +7,15 @@ Simulador acadêmico de uma corretora no terminal. É possível consultar saldo 
 Com o GCC instalado, abra o terminal nesta pasta e execute:
 
 ```sh
-gcc exchange.c -o exchange.exe
+gcc -std=c11 -Wall -Wextra -pedantic exchange.c carteira.c criptomoedas.c -o exchange.exe
+./exchange.exe
 ```
 
+Os três arquivos `.c` são compilados juntos para formar o executável. O `main()` continua em `exchange.c`, e cada arquivo `.c` declara as funções e os dados de outros arquivos que utiliza.
 
 | Acesso de demonstração | Valor |
 | --- | --- |
-| CPF fictício | `00000000000` |
+| CPF fictício | `67426742677` |
 | Senha de teste | `123456` |
 
 Use ponto nos valores decimais. O programa lê e grava os dados na pasta atual.
@@ -22,7 +24,9 @@ Use ponto nos valores decimais. O programa lê e grava os dados na pasta atual.
 
 | Arquivo | Conteúdo |
 | --- | --- |
-| [`exchange.c`](exchange.c) | Código do simulador |
+| [`exchange.c`](exchange.c) | Leitura e validação das entradas, inicialização e menu principal (`main`) |
+| [`carteira.c`](carteira.c) | Dados da conta, leitura e gravação dos TXT, login, saldo, depósitos, saques e extrato |
+| [`criptomoedas.c`](criptomoedas.c) | Seleção de moeda, compra, venda e atualização de cotações |
 | [`carteira.txt`](carteira.txt) | Conta fictícia e saldos iniciais |
 | [`cotacoes.txt`](cotacoes.txt) | Cotações iniciais simuladas, em reais, na ordem BTC, ETH e XRP |
 | [`extrato.txt`](extrato.txt) | Histórico de operações, inicialmente vazio |
