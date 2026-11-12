@@ -7,7 +7,7 @@ Simulador acadêmico de uma corretora no terminal. É possível consultar saldo 
 Com o GCC instalado, abra o terminal nesta pasta e execute:
 
 ```sh
-gcc -std=c11 -Wall -Wextra -pedantic exchange.c carteira.c criptomoedas.c -o exchange.exe
+gcc exchange.c carteira.c criptomoedas.c -o exchange.exe
 ./exchange.exe
 ```
 
