@@ -7,11 +7,9 @@ Simulador acadêmico de uma corretora no terminal. É possível consultar saldo 
 Com o GCC instalado, abra o terminal nesta pasta e execute:
 
 ```sh
-gcc -std=c11 -Wall -Wextra -pedantic exchange.c -o exchange
-./exchange
+gcc exchange.c -o exchange.exe
 ```
 
-No Windows com GCC, use `gcc -std=c11 -Wall -Wextra -pedantic exchange.c -o exchange.exe` e depois `.\exchange.exe`.
 
 | Acesso de demonstração | Valor |
 | --- | --- |
