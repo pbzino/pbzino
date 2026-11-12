@@ -7,16 +7,11 @@ Simulador acadêmico de uma corretora no terminal. É possível consultar saldo 
 Com o GCC instalado, abra o terminal nesta pasta e execute:
 
 ```sh
-gcc -std=c11 -Wall -Wextra -pedantic exchange.c entrada.c dados.c autenticacao.c carteira.c extrato.c criptomoedas.c -o exchange.exe
-```
-
-Execute na mesma pasta dos arquivos TXT:
-
-```sh
+gcc -std=c11 -Wall -Wextra -pedantic exchange.c carteira.c criptomoedas.c -o exchange.exe
 ./exchange.exe
 ```
 
-Os arquivos `.h` declaram as funções e os dados compartilhados. Cada `.c` inclui os cabeçalhos de que precisa; o GCC compila e liga todos os módulos no executável `exchange.exe`.
+Os três arquivos `.c` são compilados juntos para formar o executável. O `main()` continua em `exchange.c`, e `exchange.h` declara as funções e os dados usados entre os arquivos.
 
 | Acesso de demonstração | Valor |
 | --- | --- |
@@ -29,13 +24,10 @@ Use ponto nos valores decimais. O programa lê e grava os dados na pasta atual.
 
 | Arquivo | Conteúdo |
 | --- | --- |
-| [`exchange.c`](exchange.c) | Ponto de entrada (`main`), inicialização e menu |
-| [`entrada.c`](entrada.c) / [`entrada.h`](entrada.h) | Leitura e validação das entradas |
-| [`dados.c`](dados.c) / [`dados.h`](dados.h) | Dados compartilhados e leitura/gravação da carteira e cotações |
-| [`autenticacao.c`](autenticacao.c) / [`autenticacao.h`](autenticacao.h) | Login e conferência de senha |
-| [`carteira.c`](carteira.c) / [`carteira.h`](carteira.h) | Identificação, saldo, depósitos e saques |
-| [`extrato.c`](extrato.c) / [`extrato.h`](extrato.h) | Registro e consulta das operações |
-| [`criptomoedas.c`](criptomoedas.c) / [`criptomoedas.h`](criptomoedas.h) | Seleção de moeda, compra, venda e atualização de cotações |
+| [`exchange.c`](exchange.c) | Leitura e validação das entradas, inicialização e menu principal (`main`) |
+| [`carteira.c`](carteira.c) | Dados da conta, leitura e gravação dos TXT, login, saldo, depósitos, saques e extrato |
+| [`criptomoedas.c`](criptomoedas.c) | Seleção de moeda, compra, venda e atualização de cotações |
+| [`exchange.h`](exchange.h) | Declarações das funções e dos dados compartilhados |
 | [`carteira.txt`](carteira.txt) | Conta fictícia e saldos iniciais |
 | [`cotacoes.txt`](cotacoes.txt) | Cotações iniciais simuladas, em reais, na ordem BTC, ETH e XRP |
 | [`extrato.txt`](extrato.txt) | Histórico de operações, inicialmente vazio |

@@ -1,11 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "criptomoedas.h"
-#include "autenticacao.h"
-#include "carteira.h"
-#include "dados.h"
-#include "entrada.h"
-#include "extrato.h"
+
+#include "exchange.h"
 
 int escolherMoeda(void) {
     int i, opcao;
