@@ -17,6 +17,7 @@ Estudo Ciência da Computação na FEI. Aqui compartilho projetos da faculdade e
 | --- | --- | --- |
 | [FEItv](https://github.com/pbzino/FEITV_VERS-O_FINAL_ABSOLUTA-2-) | Catálogo de vídeos no terminal com busca, curtidas e listas de favoritos | Python |
 | [Laboratórios Full Stack](https://github.com/pbzino/lab-fullstack-main) | Exercícios web, jogos no navegador e um blog com cadastro e publicação de posts | JavaScript, Node.js, Express, EJS e MongoDB |
+| [Exchange de criptomoedas em C](https://github.com/pbzino/pbzino/tree/main/exchange-criptomoedas-c) | Simulador no terminal com carteira, extrato, compra e venda de BTC, ETH e XRP | C |
 
 ## Contato
 
